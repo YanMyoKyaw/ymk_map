@@ -11,6 +11,6 @@ This for chinese rom phones such as huawei and xiaomi.
 
 Flutter with OpenStreetMap.
 
-# Include Boundary for City, Township
-# Include marker
-# Example for using openstreetmap with flutter_map
+### Include Boundary for City, Township
+### Include marker
+### Example for using openstreetmap with flutter_map
