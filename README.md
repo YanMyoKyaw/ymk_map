@@ -1,3 +1,4 @@
+![Boundary](/images/boundary1.jpg)
 # ymk_map
 
 A YMK Map application.
@@ -15,5 +16,4 @@ Flutter with OpenStreetMap.
 ### Include marker
 ### Example for using openstreetmap with flutter_map
 
-![GitHub Logo](/images/boundary.jpg)
-![GitHub Logo](/images/boundary1.png)
+![Markers](/images/boundary.jpg)
