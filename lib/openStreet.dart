@@ -69,7 +69,7 @@ class _OpenStreetPageState extends State<OpenStreetPage> {
                 height: 80.0,
                 point: LatLng(16.8660884, 96.1171103),
                 builder: (ctx) =>
-                    Image(image: AssetImage('assets/ic_current_location.png')),
+                    Icon(Icons.location_on, size: 40),
               ),
             ],
           ),

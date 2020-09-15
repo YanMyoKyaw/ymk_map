@@ -21,8 +21,7 @@ class MapLayers extends StatelessWidget {
                 width: 80.0,
                 height: 80.0,
                 point: LatLng(16.8296146, 96.189117),
-                builder: (ctx) =>
-                Image(image: AssetImage('assets/ic_current_location.png')),
+                builder: (ctx) => Icon(Icons.location_on, size: 40),
               ),
             ],
           ),
@@ -41,8 +40,7 @@ class MapLayers extends StatelessWidget {
                   width: 80.0,
                   height: 80.0,
                   point: LatLng(16.8296146, 96.189117),
-                  builder: (ctx) =>
-                  Image(image: AssetImage('assets/ic_current_location.png')),
+                  builder: (ctx) => Icon(Icons.location_on, size: 40),
                 ),
               ],
             ),
