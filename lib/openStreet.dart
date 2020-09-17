@@ -19,7 +19,8 @@ class _OpenStreetPageState extends State<OpenStreetPage> {
   }
 
   getApi() async {
-    var url = 'https://nominatim.openstreetmap.org/search.php?q=Hlaing&polygon_geojson=1&format=json';
+    var url =
+        'https://nominatim.openstreetmap.org/search.php?q=Hlaing&polygon_geojson=1&format=json';
 //        'https://nominatim.openstreetmap.org/search.php?q=Mayangone&polygon_geojson=1&format=json';
 
     // Await the http get response, then decode the json-formatted response.
@@ -29,17 +30,17 @@ class _OpenStreetPageState extends State<OpenStreetPage> {
       var lnglat = jsonResponse[0]['geojson']['coordinates'];
       List<LatLng> points = [];
       lnglat.forEach((rootList) {
-        rootList.forEach((lst){
-          points.add(LatLng(lst[1],lst[0]));
+        rootList.forEach((lst) {
+          points.add(LatLng(lst[1], lst[0]));
         });
       });
       _polygons.add(Polygon(
-        points: points,
-        borderColor: Colors.blue,
-        color: Colors.transparent,
-        borderStrokeWidth: 3
+          points: points,
+          borderColor: Colors.blue,
+          color: Colors.transparent,
+          borderStrokeWidth: 3
 //        holePointsList: points,
-      ));
+          ));
       print('object ${points}');
     } else {
       print('Request failed with status: ${response.statusCode}.');
@@ -58,9 +59,19 @@ class _OpenStreetPageState extends State<OpenStreetPage> {
           zoom: 12.0,
         ),
         layers: [
+          // TileLayerOptions(
+          //     urlTemplate: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+          //     subdomains: ['a', 'b', 'c'],
+          // ),
           TileLayerOptions(
-              urlTemplate: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-              subdomains: ['a', 'b', 'c'],
+            urlTemplate: "https://api.mapbox.com/styles/v1/"
+                "{id}/tiles/{z}/{x}/{y}?access_token={accessToken}"
+                "&tileSize=512&zoomOffset=-1",
+            additionalOptions: {
+              'accessToken':
+                  'pk.eyJ1IjoieWFubXlvIiwiYSI6ImNrZjIzbnMxazB6NnQycm54em0zOHI0NWMifQ.SpQrfTrZaNKOApQH7-9_1Q',
+              'id': 'mapbox/streets-v11',
+            },
           ),
           MarkerLayerOptions(
             markers: [
@@ -68,8 +79,7 @@ class _OpenStreetPageState extends State<OpenStreetPage> {
                 width: 80.0,
                 height: 80.0,
                 point: LatLng(16.8660884, 96.1171103),
-                builder: (ctx) =>
-                    Icon(Icons.location_on, size: 40),
+                builder: (ctx) => Icon(Icons.location_on, size: 40),
               ),
             ],
           ),

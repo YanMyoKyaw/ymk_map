@@ -28,9 +28,19 @@ class MapLayers extends StatelessWidget {
         ],
         children: <Widget>[
           TileLayerWidget(
+            // options: TileLayerOptions(
+            //   urlTemplate: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+            //   subdomains: ['a', 'b', 'c']
+            // ),
             options: TileLayerOptions(
-              urlTemplate: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-              subdomains: ['a', 'b', 'c']
+              urlTemplate: "https://api.mapbox.com/styles/v1/"
+                  "{id}/tiles/{z}/{x}/{y}?access_token={accessToken}"
+                  "&tileSize=512&zoomOffset=-1",
+              additionalOptions: {
+                'accessToken':
+                    'pk.eyJ1IjoieWFubXlvIiwiYSI6ImNrZjIzbnMxazB6NnQycm54em0zOHI0NWMifQ.SpQrfTrZaNKOApQH7-9_1Q',
+                'id': 'mapbox/streets-v11',
+              },
             ),
           ),
           MarkerLayerWidget(
