@@ -4,7 +4,6 @@ import 'openStreet.dart';
 import 'layers.dart';
 import 'markerpopup.dart';
 import 'boundary.dart';
-import 'nominatimLocationPicker.dart';
 
 void main() {
   runApp(MyApp());

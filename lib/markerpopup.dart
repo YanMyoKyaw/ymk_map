@@ -33,7 +33,7 @@ class _MarkerPopupState extends State {
       body: FlutterMap(
         options: MapOptions(
           center: LatLng(16.8296146, 96.189117),
-          zoom: 18.0,
+          zoom: 15.0,
           plugins: [PopupMarkerPlugin()],
           onTap: (point) {
             setState(() {
@@ -48,7 +48,7 @@ class _MarkerPopupState extends State {
                 "&tileSize=512&zoomOffset=-1",
             additionalOptions: {
               'accessToken':
-                  'pk.eyJ1IjoieWFubXlvIiwiYSI6ImNrZjIzbnMxazB6NnQycm54em0zOHI0NWMifQ.SpQrfTrZaNKOApQH7-9_1Q',
+                  'sk.eyJ1IjoieWFubXlvIiwiYSI6ImNrZjZmODg4YzBwdTgyc3J2cmx6M3U0MW4ifQ.7LfRId3oA0bFX0sh6Dv0mg',
               'id': 'mapbox/streets-v11',
             },
           ),
