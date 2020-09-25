@@ -20,7 +20,7 @@ class _OpenStreetPageState extends State<OpenStreetPage> {
 
   getApi() async {
     var url =
-        'https://nominatim.openstreetmap.org/search.php?q=Hlaing&polygon_geojson=1&format=json';
+        'https://nominatim.openstreetmap.org/search.php?q=hlaing&polygon_geojson=1&format=json';
 //        'https://nominatim.openstreetmap.org/search.php?q=Mayangone&polygon_geojson=1&format=json';
 
     // Await the http get response, then decode the json-formatted response.
